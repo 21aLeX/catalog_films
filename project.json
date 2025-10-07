@@ -4,7 +4,7 @@
   "includedScripts": [],
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": ".",
+  "sourceRoot": "./src",
   "tags": [],
   "targets": {
     "build": {
@@ -14,8 +14,7 @@
       ],
       "options": {
         "outputPath": "dist/catalog_films",
-        "browser": "main.ts",
-        "baseHref": "/catalog_films/",
+        "browser": "./src/main.ts",
         "polyfills": [
           "zone.js"
         ],
@@ -40,7 +39,7 @@
         "styles": [
           "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
           "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
-          "./styles.less"
+          "./src/styles.less"
         ]
       },
       "configurations": {
@@ -90,7 +89,7 @@
       "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
-          "."
+          "./src"
         ]
       }
     },
