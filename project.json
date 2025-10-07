@@ -15,6 +15,7 @@
       "options": {
         "outputPath": "dist/catalog_films",
         "browser": "main.ts",
+        "baseHref": "/catalog_films/",
         "polyfills": [
           "zone.js"
         ],
