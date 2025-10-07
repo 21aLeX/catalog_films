@@ -1,0 +1,13 @@
+<div class="modal-film">
+    <tui-avatar src="assets/poster.jpg" [size]="'xxl'" />
+    <div class="container-data-film">
+        <h2 tuiTitle="m" class="title">{{context.data.title}}</h2>
+        <div tuiSubtitle class="year">{{context.data.year}}</div>
+        <div class="genre">
+            <tui-chip appearance="primary" *ngFor="let item of context.data.genre">{{ item }}</tui-chip>
+        </div>
+        <div tuiSubtitle class="description">{{context.data.description}}</div>
+        <tui-pin class="white rating"
+            [class.rating-negative]="context.data.rating < 5">{{context.data.rating}}</tui-pin>
+    </div>
+</div>

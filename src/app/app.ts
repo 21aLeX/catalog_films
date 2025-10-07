@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { TuiRoot, TuiTitle } from '@taiga-ui/core';
+import { FilmsList } from './components/films-list/films-list';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    TuiRoot,
+    TuiTitle,
+    FilmsList
+  ],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.less',
 })
 export class App {
-  protected title = 'catalog_films';
+  protected title = 'Film catalog';
 }

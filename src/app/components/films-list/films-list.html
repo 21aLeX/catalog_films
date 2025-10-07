@@ -1,0 +1,23 @@
+<tui-textfield iconEnd="@tui.search" *ngIf="kino$ | async as kino" class="search">
+    <label tuiLabel for="film-search">Start typing the movie title</label>
+    <input id="film-search" #input type="search" placeholder="The Dark Knight" tuiTextfield [(ngModel)]="value" (ngModelChange)="applyFilter()" />
+    <tui-icon tuiTooltip="Autocomplete suggestions" />
+</tui-textfield>
+
+<div *ngIf="!showLoader && !notFilms && kino$ | async as kino" class="container-films">
+    <div tuiBlockDetails *ngFor="let item of filteredFilms; trackBy: trackByIndex" class="block-details"
+        role="button" (click)="showDialog(item)" (keydown.enter)="showDialog(item)" (keydown.space)="showDialog(item)" tabindex="0">
+        <tui-avatar src="assets/poster.jpg" [size]="'xxl'" />
+        <h2 tuiTitle>
+            {{item.title}}
+            <div tuiSubtitle class="subtitle-center">{{item.year}}</div>
+        </h2>
+    </div>
+    <ng-container *ngIf="filteredFilms.length === 0">
+        Films not found..
+    </ng-container>
+</div>
+<ng-container *ngIf="notFilms && !showLoader">
+    There are no films for display..
+</ng-container>
+<tui-loader *ngIf="kino$" [showLoader]="showLoader" />
