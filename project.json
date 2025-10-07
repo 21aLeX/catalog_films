@@ -47,7 +47,7 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
+              "maximumWarning": "800kb",
               "maximumError": "1mb"
             },
             {
@@ -109,7 +109,7 @@
       "options": {
         "buildTarget": "catalog_films:build",
         "port": 4200,
-        "staticFilePath": "dist/catalog_films/browser",
+        "staticFilePath": "dist/catalog_films",
         "spa": true
       }
     }
